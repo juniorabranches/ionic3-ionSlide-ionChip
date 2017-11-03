@@ -1,0 +1,10 @@
+page-home {
+  .selected-topics {
+    overflow: auto;
+    display: flex;
+  }
+
+  hr {
+    background-color: white !important;
+  }
+}

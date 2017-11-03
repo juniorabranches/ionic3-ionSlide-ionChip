@@ -1,0 +1,19 @@
+<ion-content  class="primary-font" fullscreen >
+  <div padding class="selected-topics">
+    <ion-chip *ngFor="let topic of selectedCurrencies">
+      <ion-label>{{ topic }}</ion-label>
+      <button ion-button clear (click)="deleteCurrencie(topic)">
+        <ion-icon name="close-circle"></ion-icon>
+      </button>
+    </ion-chip>
+  </div>
+
+  <ion-slides padding paginationType autoplay="3000" loop spaceBetween="10" slidesPerView="3" style="height: 20vh">
+		<ion-slide *ngFor="let topic of allCurrencies" style="border-radius: 5px"
+        [ngStyle]="{'background': 'linear-gradient(283deg, #CFD4DE, '+topic.color+')'}"
+        (click)="addCurrencie(topic.name)">
+      <hr margin>
+      <span class="white">{{ topic.name }}</span>
+    </ion-slide>
+  </ion-slides>
+</ion-content>
